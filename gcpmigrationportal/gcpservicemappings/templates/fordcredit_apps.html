@@ -1,0 +1,123 @@
+{% extends "base.html" %}  
+{% block content %}
+<div style="margin-top: 5%;overflow-x:scroll;">
+    <h4 style="text-align:center">GCP Service Mappings</h4>
+    <h4 style="text-align:center">Ford Credit Apps</h4>   
+        <span style="text-align:center;"><a href="/add-app" class="btn btn-sm btn-primary">Add New App</a></span>
+        <div class="table-responsive">
+        <table class="table table-bordered table-sm table-hover">
+        <thead>
+            <th>App ID</th>
+            <th>App Name</th> 
+            <th>PDO</th> 
+            <th>SLA</th> 
+            <th>CIA</th>
+            <th>Current State Tech Stack</th> 
+            <th>Current State DB</th> 
+            <th>Future State Tech Stack</th> 
+            <th>Migration Roadmap</th> 
+            <th>In Scope</th> 
+            <th>Architecture Type</th> 
+            <th>Cloud Run</th> 
+            <th>GCP CaaS</th> 
+            <th>Onprem CaaS</th> 
+            <th>External Load Balancer</th> 
+            <th>Internal Load Balancer</th> 
+            <th>Apigee</th>
+            <th>Cloud Armor</th>
+            <th>Cloud DNS</th>
+            <th>Compute Engine</th>
+            <th>Cloud Function</th>
+            <th>Cloud Storage</th>
+            <th>CloudSQL MSSQL_SE</th>
+            <th>CloudSQL MSSQL_EE</th>
+            <th>CloudSQL PG</th>
+            <th>Onprem DB</th>
+            <th>Big Query</th>
+            <th>Cloud Scheduler</th>
+            <th>Memory Store</th>
+            <th>Cloud Monitoring</th>
+            <th>Cloud Logging</th>
+            <th>Secret Manager</th>
+            <th>Fire Store</th>
+            <th>MongoDB</th>
+            <th>Cloud Build</th>
+            <th>ADFS</th>
+            <th>Azure AD</th>
+            <th>Deployment Topology</th>
+            <th>IAC pipeline</th>
+            <th>App pipeline</th>
+            <th>FOSSA</th>
+            <th>Checkmarx</th>
+            <th>Sonarqube</th>
+            <th>Cycode</th>
+            <th>42 Crunch</th>
+            <th>Automated Testing</th>
+            <th>SRE</th>
+            <th>Migration Scope</th>
+            <th>Migration Category</th>
+            <th>Remarks</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+        {% for app in fordcreditapps %}  
+            <tr>  
+            <td><a href="/edit-app/{{ app.id }}">{{ app.app_id }}</a></td>
+            <td>{{ app.app_name }}</td> 
+            <td>{{ app.pdo }}</td> 
+            <td>{{ app.sla }}</td>
+            <td>{{ app.cia }}</td> 
+            <td>{{ app.current_state_tech_stack }}</td> 
+            <td>{{ app.current_state_db }}</td> 
+            <td>{{ app.future_state_tech_stack }}</td> 
+            <td>{{ app.migration_roadmap }}</td> 
+            <td>{{ app.in_scope }}</td> 
+            <td>{{ app.architecture_type }}</td> 
+            <td>{{ app.cloud_run }}</td> 
+            <td>{{ app.gcp_caas }}</td> 
+            <td>{{ app.onprem_caas }}</td> 
+            <td>{{ app.external_load_balancer }}</td> 
+            <td>{{ app.internal_load_balancer }}</td> 
+            <td>{{ app.apigee }}</td>
+            <td>{{ app.cloud_armor }}</td>
+            <td>{{ app.cloud_dns }}</td>
+            <td>{{ app.compute_engine }}</td>
+            <td>{{ app.cloud_function }}</td>
+            <td>{{ app.cloud_storage }}</td>
+            <td>{{ app.cloudsql_mssql_se }}</td>
+            <td>{{ app.cloudsql_mssql_ee }}</td>
+            <td>{{ app.cloudsql_pg }}</td>
+            <td>{{ app.onprem_db }}</td>
+            <td>{{ app.big_query }}</td>
+            <td>{{ app.cloud_scheduler }}</td>
+            <td>{{ app.memory_store }}</td>
+            <td>{{ app.cloud_monitoring }}</td>
+            <td>{{ app.cloud_logging }}</td>
+            <td>{{ app.secret_manager }}</td>
+            <td>{{ app.fire_store }}</td>
+            <td>{{ app.mongo_db }}</td>
+            <td>{{ app.cloud_build }}</td>
+            <td>{{ app.adfs }}</td>
+            <td>{{ app.azure_ad }}</td>
+            <td>{{ app.deployment_topology }}</td>
+            <td>{{ app.iac_pipeline }}</td>
+            <td>{{ app.app_pipeline }}</td>
+            <td>{{ app.fossa }}</td>
+            <td>{{ app.checkmarx }}</td>
+            <td>{{ app.sonarqube }}</td>
+            <td>{{ app.cycode }}</td>
+            <td>{{ app.crunch_42 }}</td>
+            <td>{{ app.automated_testing }}</td>
+            <td>{{ app.sre }}</td>
+            <td>{{ app.migration_scope }}</td>
+            <td>{{ app.migration_category }}</td>
+            <td>{{ app.remarks }}</td> 
+            <td><a href="/delete-app/{{ app.id }}" class="btn btn-danger btn-sm">Delete</a></td>  
+            </tr>  
+        {% endfor %} 
+        </tbody>
+        </table>
+        
+        </div>
+    </div>
+{% endblock content %}

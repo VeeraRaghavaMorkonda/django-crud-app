@@ -1,0 +1,7 @@
+table {
+    font-size: 0.5em;  /* Reduce overall font size */
+  }
+  
+  th, td {
+    padding: 1px;  /* Reduce padding for a tighter layout */
+  }

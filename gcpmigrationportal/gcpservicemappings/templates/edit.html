@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+   
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/update-app/{{app.id}}">  
+    {% csrf_token %}  
+    <div>{{errors}}</div>
+    <div class="container">   
+        <div class="col-12">  
+            <h3>Update App Details</h3>  
+        </div> 
+        <div class="mb-3"> 
+            <label>App ID</label>  
+            <input type="text" class="form-control" name="app_id" id="id_app_id" required maxlength="1000" value="{{ app.app_id }}"/>    
+        </div> 
+        <div class="mb-3"> 
+            <label>App Name</label>  
+            <input type="text" class="form-control" name="app_name" id="id_app_name" required maxlength="1000" value="{{ app.app_name }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>PDO</label>  
+            <input type="text" class="form-control" name="pdo" id="id_pdo" required maxlength="1000" value="{{ app.pdo }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>SLA</label>  
+            <input type="text" class="form-control" name="sla" id="id_sla" required maxlength="1000" value="{{ app.sla }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>CIA</label>  
+            <input type="text" class="form-control" name="cia" id="id_cia" required maxlength="1000" value="{{ app.cia }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Current State Tech Stack</label>  
+            <input type="text" class="form-control" name="current_state_tech_stack" id="id_current_state_tech_stack" required maxlength="1000" value="{{ app.current_state_tech_stack }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Future State Tech Stack</label>  
+            <input type="text" class="form-control" name="future_state_tech_stack" id="id_future_state_tech_stack" required maxlength="1000" value="{{ app.future_state_tech_stack }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Migration Roadmap</label>  
+            <input type="text" class="form-control" name="migration_roadmap" id="id_migration_roadmap" required maxlength="1000" value="{{ app.migration_roadmap }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Current State DB</label>  
+            <input type="text" class="form-control" name="current_state_db" id="id_current_state_db" required maxlength="1000" value="{{ app.current_state_db }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>In Scope</label>  
+            <input type="text" class="form-control" name="in_scope" id="id_in_scope" required maxlength="1000" value="{{ app.in_scope }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Architecture Type</label>  
+            <input type="text" class="form-control" name="architecture_type" id="id_architecture_type" required maxlength="1000" value="{{ app.architecture_type }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>External Load Balancer</label>  
+            <input type="text" class="form-control" name="external_load_balancer" id="id_external_load_balancer" required maxlength="1000" value="{{ app.external_load_balancer }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Internal Load Balancer</label>  
+            <input type="text" class="form-control" name="internal_load_balancer" id="id_internal_load_balancer" required maxlength="1000" value="{{ app.internal_load_balancer }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Apigee</label>  
+            <input type="text" class="form-control" name="apigee" id="id_apigee" required maxlength="1000" value="{{ app.apigee }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Armor</label>  
+            <input type="text" class="form-control" name="cloud_armor" id="id_cloud_armor" required maxlength="1000" value="{{ app.cloud_armor }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud DNS</label>  
+            <input type="text" class="form-control" name="cloud_dns" id="id_cloud_dns" required maxlength="1000" value="{{ app.cloud_dns }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Run</label>  
+            <input type="text" class="form-control" name="cloud_run" id="id_cloud_run" required maxlength="1000" value="{{ app.cloud_run }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>GCP CaaS</label>  
+            <input type="text" class="form-control" name="gcp_caas" id="id_gcp_caas" required maxlength="1000" value="{{ app.gcp_caas }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Onprem CaaS</label>  
+            <input type="text" class="form-control" name="onprem_caas" id="id_onprem_caas" required maxlength="1000" value="{{ app.onprem_caas }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Compute Engine</label>  
+            <input type="text" class="form-control" name="compute_engine" id="id_compute_engine" required maxlength="1000" value="{{ app.compute_engine }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Function</label>  
+            <input type="text" class="form-control" name="cloud_function" id="id_cloud_function" required maxlength="1000" value="{{ app.cloud_function }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Storage</label>  
+            <input type="text" class="form-control" name="cloud_storage" id="id_cloud_storage" required maxlength="1000" value="{{ app.cloud_storage }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Pub Sub</label>  
+            <input type="text" class="form-control" name="pub_sub" id="id_pub_sub" required maxlength="1000" value="{{ app.pub_sub }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>CloudSQL MSSQL_SE</label>  
+            <input type="text" class="form-control" name="cloudsql_mssql_se" id="id_cloudsql_mssql_se" required maxlength="1000" value="{{ app.cloudsql_mssql_se }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>CloudSQL MSSQL_EE</label>    
+            <input type="text" class="form-control" name="cloudsql_mssql_ee" id="id_cloudsql_mssql_ee" required maxlength="1000" value="{{ app.cloudsql_mssql_ee }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>CloudSQL PG</label>   
+            <input type="text" class="form-control" name="cloudsql_pg" id="id_cloudsql_pg" required maxlength="1000" value="{{ app.cloudsql_pg }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Onprem DB</label>  
+            <input type="text" class="form-control" name="onprem_db" id="id_onprem_db" required maxlength="1000" value="{{ app.onprem_db }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Big Query</label>  
+            <input type="text" class="form-control" name="big_query" id="id_big_query" required maxlength="1000" value="{{ app.big_query }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Scheduler</label>   
+            <input type="text" class="form-control" name="cloud_scheduler" id="id_cloud_scheduler" required maxlength="1000" value="{{ app.cloud_scheduler }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Memory Store</label>    
+            <input type="text" class="form-control" name="memory_store" id="id_memory_store" required maxlength="1000" value="{{ app.memory_store }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Monitoring</label>   
+            <input type="text" class="form-control" name="cloud_monitoring" id="id_cloud_monitoring" required maxlength="1000" value="{{ app.cloud_monitoring }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Logging</label>    
+            <input type="text" class="form-control" name="cloud_logging" id="id_cloud_logging" required maxlength="1000" value="{{ app.cloud_logging }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Secret Manager</label>    
+            <input type="text" class="form-control" name="secret_manager" id="id_secret_manager" required maxlength="1000" value="{{ app.secret_manager }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Fire Store</label>  
+            <input type="text" class="form-control" name="fire_store" id="id_fire_store" required maxlength="1000" value="{{ app.fire_store }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Data Flow</label>   
+            <input type="text" class="form-control" name="data_flow" id="id_data_flow" required maxlength="1000" value="{{ app.data_flow }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>MongoDB Atlas</label>    
+            <input type="text" class="form-control" name="mongo_db_atlas" id="id_mongo_db_atlas" required maxlength="1000" value="{{ app.mongo_db_atlas }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Build</label>  
+            <input type="text" class="form-control" name="cloud_build" id="id_cloud_build" required maxlength="1000" value="{{ app.cloud_build }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>ADFS</label>  
+            <input type="text" class="form-control" name="adfs" id="id_adfs" required maxlength="1000" value="{{ app.adfs }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Azure AD</label>   
+            <input type="text" class="form-control" name="azure_ad" id="id_azure_ad" required maxlength="1000" value="{{ app.azure_ad }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>No.of Cloud Run MS</label>  
+            <input type="text" class="form-control" name="no_of_cloud_run_ms" id="id_no_of_cloud_run_ms" required maxlength="1000" value="{{ app.no_of_cloud_run_ms }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Deployment Topology</label>    
+            <input type="text" class="form-control" name="deployment_topology" id="id_deployment_topology" required maxlength="1000" value="{{ app.deployment_topology }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Deployment Topology(to be deleted)</label>  
+            <input type="text" class="form-control" name="deployment_topology_tobedeleted" id="id_deployment_topology_tobedeleted" required maxlength="1000" value="{{ app.deployment_topology_tobedeleted }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Availability</label>    
+            <input type="text" class="form-control" name="availability" id="id_availability" required maxlength="1000" value="{{ app.availability }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Downtime</label>   
+            <input type="text" class="form-control" name="downtime" id="id_downtime" required maxlength="1000" value="{{ app.downtime }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Remarks</label>   
+            <input type="text" class="form-control" name="remarks" id="id_remarks" required maxlength="1000" value="{{ app.remarks }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Comparision Notes</label>   
+            <input type="text" class="form-control" name="comparision_notes" id="id_comparision_notes" required maxlength="1000" value="{{ app.comparision_notes }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Verification</label>    
+            <input type="text" class="form-control" name="verification" id="id_verification" required maxlength="1000" value="{{ app.verification }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Business Value</label>    
+            <input type="text" class="form-control" name="business_value" id="id_business_value" required maxlength="1000" value="{{ app.business_value }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Business Remarks</label>    
+            <input type="text" class="form-control" name="business_remarks" id="id_business_remarks" required maxlength="1000" value="{{ app.business_remarks }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Planned Launch Date</label>    
+            <input type="text" class="form-control" name="planned_launch_date" id="id_planned_launch_date" required maxlength="1000" value="{{ app.planned_launch_date }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>DevSecOps Pipeline</label>    
+            <input type="text" class="form-control" name="devsecops_pipeline" id="id_devsecops_pipeline" required maxlength="1000" value="{{ app.devsecops_pipeline }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>App pipeline</label>   
+            <input type="text" class="form-control" name="app_pipeline" id="id_app_pipeline" required maxlength="1000" value="{{ app.app_pipeline }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>IAC pipeline</label>   
+            <input type="text" class="form-control" name="iac_pipeline" id="id_iac_pipeline" required maxlength="1000" value="{{ app.iac_pipeline }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>FOSSA</label>  
+            <input type="text" class="form-control" name="fossa" id="id_fossa" required maxlength="1000" value="{{ app.fossa }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Checkmarx</label>  
+            <input type="text" class="form-control" name="checkmarx" id="id_checkmarx" required maxlength="1000" value="{{ app.checkmarx }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Cycode</label>    
+            <input type="text" class="form-control" name="cycode" id="id_cycode" required maxlength="1000" value="{{ app.cycode }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Sonarqube</label>  
+            <input type="text" class="form-control" name="sonarqube" id="id_sonarqube" required maxlength="1000" value="{{ app.sonarqube }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>42 Crunch</label>   
+            <input type="text" class="form-control" name="crunch_42" id="id_crunch_42" required maxlength="1000" value="{{ app.crunch_42 }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Automated Testing Before Deploy</label>    
+            <input type="text" class="form-control" name="automated_testing_before_deploy" id="id_automated_testing_before_deploy" required maxlength="1000" value="{{ app.automated_testing_before_deploy }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Automated Testing After Deploy</label>    
+            <input type="text" class="form-control" name="automated_testing_after_deploy" id="id_automated_testing_after_deploy" required maxlength="1000" value="{{ app.automated_testing_after_deploy }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Monitoring</label>   
+            <input type="text" class="form-control" name="monitoring" id="id_monitoring" required maxlength="1000" value="{{ app.monitoring }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>SRE</label>
+            <input type="text" class="form-control" name="sre" id="id_sre" required maxlength="1000" value="{{ app.sre }}" />  
+        </div>
+        <div class="mb-3"> 
+            <label>Deviations</label> 
+            <input type="text" class="form-control" name="deviation" id="id_deviation" required maxlength="1000" value="{{ app.deviation }}" />  
+        </div>
+        <div class="mb-3"> 
+            <label>Target DB</label> 
+            <input type="text" class="form-control" name="target_db" id="id_target_db" required maxlength="1000" value="{{ app.target_db }}" />  
+        </div>
+        <div class="mb-3"> 
+            <label>Migration Scope</label> 
+            <input type="text" class="form-control" name="migration_scope" id="id_migration_scope" required maxlength="1000" value="{{ app.migration_scope }}" />  
+        </div>
+        <div class="mb-3"> 
+            <label>Migration Category</label>  
+            <input type="text" class="form-control" name="migration_category" id="id_migration_category" required maxlength="1000" value="{{ app.migration_category }}" />  
+        </div>      
+        <div class="mb-3"> 
+            <button type="submit" class="btn btn-sm btn-success">Update</button>  
+        </div> 
+    </div>  
+    </form>  
+{% endblock content %} 

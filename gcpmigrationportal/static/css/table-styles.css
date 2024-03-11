@@ -1,0 +1,49 @@
+table {
+    font: normal 12px Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table60 {
+    width : 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+table td, table th, table tr {
+    border: 1px solid #D3D3D3;
+    padding: 2px;
+}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    position: sticky;
+    top:0;
+    background-color: #514c4ca3; 
+    color: white;
+}
+
+.mytable {
+    font-family: "Arial";
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.mytable td, .mytable th, .mytable tr {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.mytable tr:hover {background-color: #ddd;}
+
+.mytable th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: orange;
+    color: white;
+}

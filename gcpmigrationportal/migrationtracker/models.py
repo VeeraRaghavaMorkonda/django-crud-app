@@ -1,0 +1,45 @@
+from django.db import models
+
+# Create your models here.
+
+class MigrationTrackerModel(models.Model):
+    app_id = models.CharField(max_length=1000, null=True)    
+    app_name = models.CharField(max_length=1000, null=True) 
+    pdo = models.CharField(max_length=1000, null=True) 
+    existing_platform = models.CharField(max_length=1000, null=True) 
+    sla = models.CharField(max_length=1000, null=True) 
+    cia = models.CharField(max_length=1000, null=True)
+    ll4 = models.CharField(max_length=1000, null=True) 
+    ll5 = models.CharField(max_length=1000, null=True) 
+    ll6 = models.CharField(max_length=1000, null=True)
+    pdo_contacts = models.CharField(max_length=1000, null=True)
+    app_arch_contacts = models.CharField(max_length=1000, null=True)
+    planned_launch_date = models.DateField()
+    quater_of_launch = models.CharField(max_length=1000, null=True)
+    planned_decom_date = models.DateField()
+    assigned_wavelead = models.CharField(max_length=1000, null=True)
+    assigned_dl_il = models.CharField(max_length=1000, null=True)   
+    assigned_team = models.CharField(max_length=1000, null=True)
+    assigned_techlead = models.CharField(max_length=1000, null=True)    
+    assigned_ce = models.CharField(max_length=1000, null=True) 
+    assessment_status = models.CharField(max_length=1000, null=True) 
+    fsa_status = models.CharField(max_length=1000, null=True) 
+    costestimation_status = models.CharField(max_length=1000, null=True)   
+    fsa_link = models.CharField(max_length=1000, null=True)
+    costestimation_link = models.CharField(max_length=1000, null=True)
+    status_update = models.CharField(max_length=1000, null=True)
+    servicemapping_updated = models.CharField(max_length=1000, null=True)
+    costestimation_updated = models.CharField(max_length=1000, null=True)
+    migration_scope = models.CharField(max_length=1000, null=True)
+    migration_category = models.CharField(max_length=1000, null=True)
+    architecture_finalized = models.CharField(max_length=1000, null=True)
+    onboarding_dev = models.CharField(max_length=1000, null=True)
+    onboarding_qa = models.CharField(max_length=1000, null=True)
+    onboarding_prod = models.CharField(max_length=1000, null=True)
+    code_changes = models.CharField(max_length=1000, null=True)
+    uat = models.CharField(max_length=1000, null=True)
+    devsecops = models.CharField(max_length=1000, null=True)
+    remarks = models.CharField(max_length=1000, null=True)
+    
+    class Meta:  
+        db_table = "migrationtracker_table"

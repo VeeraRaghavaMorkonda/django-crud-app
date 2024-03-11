@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+  
+{% block title %} Add New App {% endblock title %}
+  
+{% block content %}
+<div style="margin-top: 5%;overflow-x:scroll;">   
+    <form method="POST" class="post-form" action="/add-app">  
+    {% csrf_token %}  
+    <div class="container">  
+        <div class="col-12">  
+        <h3>Enter App Details</h3>  
+        </div>    
+     
+        <div class="mb-3"> 
+            <label>App ID</label>  
+            {{ form.app_id }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>App Name</label>  
+            {{ form.app_name }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>PDO</label>  
+            {{ form.pdo }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>SLA</label>  
+            {{ form.sla }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>CIA</label>  
+            {{ form.cia }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Current State Tech Stack</label>  
+            {{ form.current_state_tech_stack }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Future State Tech Stack</label>  
+            {{ form.future_state_tech_stack }}   
+        </div>
+        <div class="mb-3"> 
+            <label>Migration Roadmap</label>  
+            {{ form.migration_roadmap }}   
+        </div>  
+        <div class="mb-3"> 
+            <label>Current State DB</label>  
+            {{ form.current_state_db }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>In Scope</label>  
+            {{ form.in_scope }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Architecture Type</label>  
+            {{ form.architecture_type }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>External Load Balancer</label>  
+            {{ form.external_load_balancer }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Internal Load Balancer</label>  
+            {{ form.internal_load_balancer }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Apigee</label>  
+            {{ form.apigee }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Armor</label>  
+            {{ form.cloud_armor }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud DNS</label>  
+            {{ form.cloud_dns }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Run</label>  
+            {{ form.cloud_run }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>GCP CaaS</label>  
+            {{ form.gcp_caas }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Onprem CaaS</label>  
+            {{ form.onprem_caas }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Compute Engine</label>  
+            {{ form.compute_engine }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Function</label>  
+            {{ form.cloud_function }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Storage</label>  
+            {{ form.cloud_storage }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Pub Sub</label>  
+            {{ form.pub_sub }}   
+        </div>
+        <div class="mb-3"> 
+            <label>CloudSQL MSSQL_SE</label>  
+            {{ form.cloudsql_mssql_se }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>CloudSQL MSSQL_EE</label>  
+            {{ form.cloudsql_mssql_ee }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>CloudSQL PG</label>  
+            {{ form.cloudsql_pg }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Onprem DB</label>  
+            {{ form.onprem_db }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Big Query</label>  
+            {{ form.big_query }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Scheduler</label>  
+            {{ form.cloud_scheduler }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Memory Store</label>  
+            {{ form.memory_store }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Monitoring</label>  
+            {{ form.cloud_monitoring }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Logging</label>  
+            {{ form.cloud_logging }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Secret Manager</label>  
+            {{ form.secret_manager }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Fire Store</label>  
+            {{ form.fire_store }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Data Flow</label>  
+            {{ form.data_flow }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>MongoDB Atlas</label>  
+            {{ form.mongo_db_atlas }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cloud Build</label>  
+            {{ form.cloud_build }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>ADFS</label>  
+            {{ form.adfs }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Azure AD</label>  
+            {{ form.azure_ad }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>No.of Cloud Run MS</label>  
+            {{ form.no_of_cloud_run_ms }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Deployment Topology</label>  
+            {{ form.deployment_topology }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Deployment Topology(to be deleted)</label>  
+            {{ form.deployment_topology_tobedeleted }}   
+        </div>
+        <div class="mb-3"> 
+            <label>Availability</label>  
+            {{ form.availability }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Downtime</label>  
+            {{ form.downtime }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Remarks</label>  
+            {{ form.remarks }}   
+        </div>
+        <div class="mb-3"> 
+            <label>Comparision Notes</label>  
+            {{ form.comparision_notes }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Verification</label>  
+            {{ form.verification }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Business Value</label>  
+            {{ form.business_value }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Business Remarks</label>  
+            {{ form.business_remarks }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Planned Launch Date</label>  
+            {{ form.planned_launch_date }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>DevSecOps Pipeline</label>  
+            {{ form.devsecops_pipeline }}   
+        </div>  
+        <div class="mb-3"> 
+            <label>App pipeline</label>  
+            {{ form.app_pipeline }}   
+        </div>             
+        <div class="mb-3"> 
+            <label>IAC pipeline</label>  
+            {{ form.iac_pipeline }}   
+        </div> 
+
+        <div class="mb-3"> 
+            <label>FOSSA</label>  
+            {{ form.fossa }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Checkmarx</label>  
+            {{ form.checkmarx }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Cycode</label>  
+            {{ form.cycode }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Sonarqube</label>  
+            {{ form.sonarqube }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>42 Crunch</label>  
+            {{ form.crunch_42 }}   
+        </div>
+        <div class="mb-3"> 
+            <label>Automated Testing Before Deploy</label>  
+            {{ form.automated_testing_before_deploy }}   
+        </div>
+        <div class="mb-3"> 
+            <label>Automated Testing After Deploy</label>  
+            {{ form.automated_testing_after_deploy }}   
+        </div>
+        <div class="mb-3"> 
+            <label>Monitoring</label>  
+            {{ form.monitoring }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>SRE</label>  
+            {{ form.sre }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Deviations</label>  
+            {{ form.deviation }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Target DB</label>  
+            {{ form.target_db }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Migration Scope</label>  
+            {{ form.migration_scope }}   
+        </div> 
+        <div class="mb-3"> 
+            <label>Migration Category</label>  
+            {{ form.migration_category }}   
+        </div> 
+        <div class="mb-3"> 
+            <button type="submit" class="btn btn-sm btn-primary">Submit</button>    
+        </div> 
+    </div>  
+    </form>  
+</div> 
+{% endblock content %} 
